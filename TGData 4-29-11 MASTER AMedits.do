@@ -1,10 +1,14 @@
+* Author: Noel Johnson
+* Last Edited: 7-31-2023 [realized previous version on webpage was a month older than this one. A few additional observations added before publication were thus missing in old analysis.]
+* To run .do file search for "[data path]" and replace with the actual path to the file "TGData 4-29-11 MASTER AMedits.dta" on your local machine. 
+
+
 set memory 500000
 set matsize 800
 
 
-use "/Users/noeljohnson_laptop/Desktop/TGData 4-29-11 MASTER AMedits copy.dta", clear
+use "[data path]", clear
 
-log using "/Users/Noel Johnson Notebook/Desktop/TGData 5-4-11 MASTER AMedits.log", replace
 
 * Outline
 
@@ -75,11 +79,11 @@ replace countrygroup=5 if countrygroup==8
 
 *
 
-1 = N. America
-2 = Europe
-3 = Asia
-4 = S. America
-5 = Africa
+* 1 = N. America
+* 2 = Europe
+* 3 = Asia
+* 4 = S. America
+* 5 = Africa
 
 */
 
@@ -119,9 +123,9 @@ sort countrygroup
 list countrygroup countcountry sumn psentfraction pretavail trust trustworthy, clean compress
 
 
-use "/Users/noeljohnson_laptop/Desktop/TGData 4-29-11 MASTER AMedits copy.dta", clear
+use "[data path]", clear
 
-*  Messing with the endowments */
+*  Fix coding error regarding endowments for study 136 */
 
 replace proportion=1 if studynr==136
 
@@ -178,11 +182,11 @@ replace countrygroup=5 if countrygroup==8
 
 *
 
-1 = N. America
-2 = Europe
-3 = Asia
-4 = S. America
-5 = Africa
+* 1 = N. America
+* 2 = Europe
+* 3 = Asia
+* 4 = S. America
+* 5 = Africa
 
 */
 
@@ -328,7 +332,7 @@ list country countcountry sumn psentfraction pretavail trust trustworthy, clean 
 
 
 
-use "/Users/Noel Johnson Notebook/Desktop/TGData 5-4-11 MASTER AMedits.dta", clear
+use "[data path]", clear
 
 
 * Fix the Country Codes */
@@ -386,11 +390,11 @@ replace countrygroup=5 if countrygroup==8
 
 *
 
-1 = N. America
-2 = Europe
-3 = Asia
-4 = S. America
-5 = Africa
+* 1 = N. America
+* 2 = Europe
+* 3 = Asia
+* 4 = S. America
+* 5 = Africa
 
 */
 
@@ -425,4 +429,4 @@ sum pretavail if countrygroup==4 & trustworthysample==1 [aw=n]
 sum pretavail if countrygroup==5 & trustworthysample==1 [aw=n]
 
 
-log close
+* End Code
