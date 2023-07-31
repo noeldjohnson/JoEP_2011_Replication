@@ -12,10 +12,10 @@ use "[data path]", clear
 
 * Outline
 
-1.  Create Variables and Clean-up Data
-2.  Summary Stats
-3.  Predicting Trust with Experimental Variables
-4.  Predicting Trustworthiness with Experimental Variables
+* 1.  Create Variables and Clean-up Data
+* 2.  Summary Stats
+* 3.  Predicting Trust with Experimental Variables
+* 4.  Predicting Trustworthiness with Experimental Variables
 
 */
 
